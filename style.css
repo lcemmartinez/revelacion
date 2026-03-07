@@ -1,0 +1,80 @@
+:root {
+    --rosa: #F2A7B5;
+    --azul: #89CFF0;
+    --crema: #FDFBF2;
+    --texto: #5D534A;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.invitacion-container {
+    background-color: var(--crema);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.titulo-mixto { font-size: 2.5rem; margin-bottom: 10px; }
+.nina { color: var(--rosa); font-family: cursive; }
+.nino { color: var(--azul); font-family: cursive; }
+.o { font-size: 1.2rem; color: #aaa; }
+
+.info { border-top: 1px solid #eee; border-bottom: 1px solid #eee; margin: 20px 0; padding: 15px 0; }
+.dia { font-size: 3rem; font-weight: bold; color: var(--texto); }
+
+.acciones { display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px; }
+.btn-ubicacion, .btn-musica, #submit-btn {
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-ubicacion { background-color: var(--azul); color: white; }
+#submit-btn { background-color: var(--rosa); color: white; width: 100%; margin-top: 10px; }
+
+.rsvp { background: white; padding: 15px; border-radius: 10px; margin-top: 20px; }
+input, select { width: 90%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px; }
+
+/* --- Estilos para los Ositos --- */
+.decoracion-ositos {
+    position: fixed; /* Mantiene a los ositos fijos en la pantalla */
+    bottom: -10px;    /* Ligeramente por debajo del borde para que parezca que 'salen' */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Uno a cada lado */
+    padding: 0 10px; /* Pequeño margen lateral */
+    pointer-events: none; /* No interfieren con los clics en el formulario */
+    z-index: 10; /* Asegura que estén sobre el fondo, pero bajo el confeti si prefieres */
+}
+
+.osito {
+    width: 30%;      /* Tamaño relativo para que sea responsivo */
+    max-width: 150px; /* Tamaño máximo en pantallas grandes */
+    height: auto;
+}
+
+/* Efecto opcional de respiración suave */
+@keyframes respirar {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+
+.osito {
+    animation: respirar 4s ease-in-out infinite;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower - Invitación</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="invitacion-container">
+        <header class="header">
+            <h1 class="titulo-mixto">
+                <span class="nina">¿Niña</span> <span class="o">o</span> <span class="nino">Niño?</span>
+            </h1>
+            <p class="subtitulo">¡Acompáñanos a descubrir el género de nuestro bebé!</p>
+        </header>
+
+        <section class="info">
+            <div class="fecha">
+                <p>JULIO</p>
+                <span class="dia">12</span>
+            </div>
+            <div class="detalles">
+                <p>16:00 hrs.</p>
+                <p>Calle Cualquiera 123, Cualquier Lugar</p>
+            </div>
+        </section>
+
+        <div class="acciones">
+            <a href="https://maps.google.com" target="_blank" class="btn-ubicacion">Ver Ubicación 📍</a>
+            <button id="btn-reproducir" class="btn-musica">Poner Música 🎵</button>
+        </div>
+
+        <section class="rsvp">
+            <h3>Confirmar Asistencia</h3>
+            <form id="form-registro">
+                <input type="text" name="nombre" placeholder="Tu Nombre" required>
+                <select name="asistencia">
+                    <option value="si">¡Ahí estaré!</option>
+                    <option value="no">No podré ir</option>
+                </select>
+                <button type="submit" id="submit-btn">Enviar Confirmación</button>
+            </form>
+        </section>
+
+     <div class="decoracion-ositos">
+            <img src="osito-azul.png" alt="Osito Azul" class="osito osito-izquierda">
+            <img src="osito-rosa.png" alt="Osito Rosa" class="osito osito-derecha">
+        </div>
+    </div>
+
+    <audio id="musica-fondo" loop>
+        <source src="TU_ARCHIVO_DE_MUSICA.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
