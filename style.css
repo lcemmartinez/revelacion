@@ -76,7 +76,24 @@ body {
     transition: 0.3s;
 }
 
-.btn-ubicacion { background-color: var(--azul); color: white; }
+.btn-ubicacion {
+    display: inline-block; /* Para que respete el padding */
+    background-color: var(--azul);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(137, 207, 240, 0.4);
+}
+
+.btn-ubicacion:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(137, 207, 240, 0.6);
+}
 #submit-btn { background-color: var(--rosa); color: white; width: 100%; margin-top: 10px; }
 
 /* 6. FORMULARIO RSVP */
