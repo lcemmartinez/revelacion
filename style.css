@@ -1,4 +1,66 @@
 :root {
+    --rosa-pastel: #F2A7B5;
+    --azul-pastel: #89CFF0;
+    --crema: #FDFBF2;
+    --texto: #5D534A;
+}
+
+body {
+    /* --- ACTUALIZADO: Degradado de Fondo (Linear Gradient) --- */
+    /* De azul pastel (izquierda) a rosa pastel (derecha) */
+    background: linear-gradient(135deg, var(--azul-pastel) 0%, var(--rosa-pastel) 100%);
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrado vertical opcional */
+    min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
+    margin: 0;
+    padding: 20px;
+}
+
+.invitacion-container {
+    background-color: rgba(253, 251, 242, 0.9); /* Crema con ligera transparencia para que se note el degradado de fondo */
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Sombra un poco más fuerte */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- NUEVO: Estilos para la Cigüeña --- */
+.decoracion-ciguena {
+    position: absolute;
+    top: 10px; /* Ajusta la distancia desde arriba */
+    left: 50%;
+    transform: translateX(-50%); /* Centrado horizontal perfecto */
+    width: 100%;
+    pointer-events: none; /* No interfiere con clics */
+    z-index: 5; /* Por encima del texto pero bajo los ositos/confeti */
+}
+
+.ciguena {
+    width: 60px; /* Ajusta el tamaño de la cigüeña */
+    height: auto;
+    opacity: 0.8; /* Ligeramente sutil */
+}
+
+/* Pequeña animación de vuelo */
+@keyframes volarCiguena {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.ciguena {
+    animation: volarCiguena 5s ease-in-out infinite;
+}
+
+/* ... resto del CSS anterior (info, acciones, rsvp, ositos) ... */
+
+:root {
     --rosa: #F2A7B5;
     --azul: #89CFF0;
     --crema: #FDFBF2;
