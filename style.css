@@ -1,70 +1,4 @@
-:root {
-    --rosa-pastel: #F2A7B5;
-    --azul-pastel: #89CFF0;
-    --crema: #FDFBF2;
-    --texto: #5D534A;
-}
-
-body {
-    /* --- ACTUALIZADO: Degradado de Fondo (Linear Gradient) --- */
-    /* De azul pastel (izquierda) a rosa pastel (derecha) */
-    background: linear-gradient(135deg, var(--azul-pastel) 0%, var(--rosa-pastel) 100%);
-    
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centrado vertical opcional */
-    min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
-    margin: 0;
-    padding: 20px;
-}
-
-.invitacion-container {
-    background-color: rgba(253, 251, 242, 0.9); /* Crema con ligera transparencia para que se note el degradado de fondo */
-    background-image: radial-gradient(#d1ccc0 0.5px, transparent 0.5px);
-    background-size: 4px 4px; /* Esto crea un patrón de puntos minúsculos */
-    background-blend-mode: multiply; /* Mezcla los puntos con el color crema */
-    width: 100%;
-    max-width: 400px;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Sombra un poco más fuerte */
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    outline: 8px solid rgba(255, 255, 255, 0.3); /* Un marco blanco semitransparente */
-    outline-offset: -15px; /* Lo mete hacia adentro de la tarjeta */
-}
-
-/* --- NUEVO: Estilos para la Cigüeña --- */
-.decoracion-ciguena {
-    position: absolute;
-    top: 10px; /* Ajusta la distancia desde arriba */
-    left: 50%;
-    transform: translateX(-50%); /* Centrado horizontal perfecto */
-    width: 100%;
-    pointer-events: none; /* No interfiere con clics */
-    z-index: 5; /* Por encima del texto pero bajo los ositos/confeti */
-}
-
-.ciguena {
-    width: 90px; /* Ajusta el tamaño de la cigüeña */
-    height: auto;
-    opacity: 0.8; /* Ligeramente sutil */
-}
-
-/* Pequeña animación de vuelo */
-@keyframes volarCiguena {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-.ciguena {
-    animation: volarCiguena 5s ease-in-out infinite;
-}
-
-/* ... resto del CSS anterior (info, acciones, rsvp, ositos) ... */
-
+/* 1. VARIABLES GLOBALES */
 :root {
     --rosa: #F2A7B5;
     --azul: #89CFF0;
@@ -72,34 +6,59 @@ body {
     --texto: #5D534A;
 }
 
+/* 2. ESTILOS BASE Y FONDO DEGRADADO */
 body {
-    background-color: #f0f0f0;
+    /* Degradado de fondo de la página */
+    background: linear-gradient(135deg, var(--azul) 0%, var(--rosa) 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
+    align-items: center; /* Centra la invitación verticalmente */
+    min-height: 100vh;
+    margin: 0;
     padding: 20px;
 }
 
+/* 3. CONTENEDOR CON TEXTURA */
 .invitacion-container {
-    background-color: var(--crema);
+    /* Fondo base crema con transparencia */
+    background-color: rgba(253, 251, 242, 0.9); 
+    
+    /* IMAGEN DE TEXTURA: Asegúrate de que la carpeta assets exista */
+    background-image: url('assets/images/fondo.jpg');
+    background-repeat: no-repeat;
+    background-blend-mode: overlay; 
+    
     width: 100%;
     max-width: 400px;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     text-align: center;
     position: relative;
     overflow: hidden;
+    
+    /* Marco decorativo interno */
+    outline: 8px solid rgba(255, 255, 255, 0.3);
+    outline-offset: -15px;
+    opacity: 0.95;
 }
 
+/* 4. TÍTULOS Y TEXTO */
 .titulo-mixto { font-size: 2.5rem; margin-bottom: 10px; }
 .nina { color: var(--rosa); font-family: cursive; }
 .nino { color: var(--azul); font-family: cursive; }
 .o { font-size: 1.2rem; color: #aaa; }
 
-.info { border-top: 1px solid #eee; border-bottom: 1px solid #eee; margin: 20px 0; padding: 15px 0; }
+.info { 
+    border-top: 1px solid rgba(0,0,0,0.1); 
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+    margin: 20px 0; 
+    padding: 15px 0; 
+}
 .dia { font-size: 3rem; font-weight: bold; color: var(--texto); }
 
+/* 5. BOTONES Y ACCIONES */
 .acciones { display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px; }
 .btn-ubicacion, .btn-musica, #submit-btn {
     padding: 12px;
@@ -114,34 +73,57 @@ body {
 .btn-ubicacion { background-color: var(--azul); color: white; }
 #submit-btn { background-color: var(--rosa); color: white; width: 100%; margin-top: 10px; }
 
-.rsvp { background: white; padding: 15px; border-radius: 10px; margin-top: 20px; }
+/* 6. FORMULARIO RSVP */
+.rsvp { 
+    background: rgba(255, 255, 255, 0.6); 
+    padding: 15px; 
+    border-radius: 10px; 
+    margin-top: 20px; 
+}
 input, select { width: 90%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px; }
 
-/* --- Estilos para los Ositos --- */
+/* 7. DECORACIÓN: CIGÜEÑA (Arriba) */
+.decoracion-ciguena {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+.ciguena {
+    width: 90px;
+    height: auto;
+    opacity: 0.8;
+    animation: volarCiguena 5s ease-in-out infinite;
+}
+
+@keyframes volarCiguena {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -5px); }
+}
+
+/* 8. DECORACIÓN: OSITOS (Abajo) */
 .decoracion-ositos {
-    position: fixed; /* Mantiene a los ositos fijos en la pantalla */
-    bottom: -10px;    /* Ligeramente por debajo del borde para que parezca que 'salen' */
+    position: absolute; /* Cambiado de fixed a absolute para que se queden dentro de la tarjeta */
+    bottom: -10px;
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Uno a cada lado */
-    padding: 0 10px; /* Pequeño margen lateral */
-    pointer-events: none; /* No interfieren con los clics en el formulario */
-    z-index: 10; /* Asegura que estén sobre el fondo, pero bajo el confeti si prefieres */
+    justify-content: space-between;
+    padding: 0 10px;
+    pointer-events: none;
+    z-index: 10;
 }
-
 .osito {
-    width: 30%;      /* Tamaño relativo para que sea responsivo */
-    max-width: 150px; /* Tamaño máximo en pantallas grandes */
+    width: 30%;
+    max-width: 120px;
     height: auto;
+    animation: respirar 4s ease-in-out infinite;
 }
 
-/* Efecto opcional de respiración suave */
 @keyframes respirar {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.03); }
-}
-
-.osito {
-    animation: respirar 4s ease-in-out infinite;
+    50% { transform: scale(1.05); }
 }
