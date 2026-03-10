@@ -68,3 +68,30 @@ form.addEventListener('submit', e => {
         btnEnvio.innerText = "Enviar Confirmación";
     });
 });
+
+// Configura la fecha del evento (Formato: Año, Mes-1, Día, Hora, Minutos)
+// Nota: Enero es 0, Febrero es 1... Julio es 6.
+const fechaEvento = new Date(2026, 3, 29, 16, 0, 0).getTime();
+
+const actualizarReloj = setInterval(function() {
+    const ahora = new Date().getTime();
+    const distancia = fechaEvento - ahora;
+
+    // Cálculos de tiempo
+    const d = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distancia % (1000 * 60)) / 1000);
+
+    // Inyectar en el HTML
+    document.getElementById("dias").innerText = d;
+    document.getElementById("horas").innerText = h;
+    document.getElementById("minutos").innerText = m;
+    document.getElementById("segundos").innerText = s;
+
+    // Si la cuenta termina
+    if (distancia < 0) {
+        clearInterval(actualizarReloj);
+        document.querySelector(".cuenta-regresiva").innerHTML = "<h3>¡Es hoy! 🎉</h3>";
+    }
+}, 1000);
