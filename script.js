@@ -71,7 +71,7 @@ form.addEventListener('submit', e => {
 
 // Configura la fecha del evento (Formato: Año, Mes-1, Día, Hora, Minutos)
 // Nota: Enero es 0, Febrero es 1... Julio es 6.
-const fechaEvento = new Date(2026, 3, 29, 16, 0, 0).getTime();
+const fechaEvento = new Date(2026, 2, 29, 16, 0, 0).getTime();
 
 const actualizarReloj = setInterval(function() {
     const ahora = new Date().getTime();
