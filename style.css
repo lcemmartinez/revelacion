@@ -53,8 +53,8 @@ body {
     
     /* VALORES: desplazamiento-X | desplazamiento-Y | desenfoque | color */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);}
-.nina { color: var(--rosa); font-family: cursive;text-shadow: 1px 1px 2px rgba(242, 167, 181, 0.5); }
-.nino { color: var(--azul); font-family: cursive; text-shadow: 1px 1px 2px rgba(137, 207, 240, 0.5); 
+.nina { font-size: 1.5em; color: var(--rosa); font-family: cursive;text-shadow: 1px 1px 2px rgba(242, 167, 181, 0.5); }
+.nino { font-size: 1.5em; color: var(--azul); font-family: cursive; text-shadow: 1px 1px 2px rgba(137, 207, 240, 0.5); 
 }
 .o { font-size: 2.8rem; color: #aaa; }
 
